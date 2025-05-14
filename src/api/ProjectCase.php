@@ -44,6 +44,7 @@ class ProjectCase
     public function index(Request $request): Response
     {
         $where = $request->getMore(['case_category_id']);
+        $where['enabled'] = 1;
         return response_json()->success($this->services->getList(array_filter($where, function ($v) {
             return null !== $v && '' !== $v;
         })));

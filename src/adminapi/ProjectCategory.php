@@ -19,7 +19,7 @@ class ProjectCategory extends AuthController
 {
     /**
      * 显示资源列表
-     *
+     * @method GET
      * @param Request $request
      * @return Response
      * @throws DataNotFoundException
@@ -41,7 +41,7 @@ class ProjectCategory extends AuthController
 
     /**
      * 保存新建的资源
-     *
+     * @method POST
      * @param Request $request
      * @return Response
      */
@@ -63,7 +63,7 @@ class ProjectCategory extends AuthController
 
     /**
      * 删除指定资源
-     *
+     * @method DELETE
      * @param int|string $id
      * @param Request $request
      * @return Response

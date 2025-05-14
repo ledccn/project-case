@@ -17,5 +17,5 @@ Route::group('project_case', function () {
     Route::get('category/read/:id', implode('@', [ProjectCategory::class, 'read']))->option(['real_name' => '项目分类详情']);
 })->middleware(AllowOriginMiddleware::class)
     ->middleware(StationOpenMiddleware::class)
-    ->middleware(AuthTokenMiddleware::class, true)
+    ->middleware(AuthTokenMiddleware::class, false)
     ->option(['mark' => 'project_case', 'mark_name' => '项目案例']);
