@@ -22,8 +22,8 @@ class ProjectCaseValidate extends Validate
         'logo' => 'require|max:255',
         'title' => 'require|max:255',
         'qrcode' => 'require|max:255',
-        'official_account' => 'require|max:255',
-        'mini_appid' => 'require|max:255',
+        'official_account' => 'requireWithout:mini_appid|max:255',
+        'mini_appid' => 'requireWithout:official_account|max:255',
         'mini_path' => 'require|max:255',
         'description' => 'require',
         'sort' => 'require|integer|between:0,255',
@@ -47,9 +47,9 @@ class ProjectCaseValidate extends Validate
         'title.max' => '标题长度不能超过255',
         'qrcode.require' => '二维码不能为空',
         'qrcode.max' => '二维码长度不能超过255',
-        'official_account.require' => '公众号不能为空',
+        'official_account.requireWithout' => '公众号不能为空',
         'official_account.max' => '公众号长度不能超过255',
-        'mini_appid.require' => '小程序appid不能为空',
+        'mini_appid.requireWithout' => '小程序appid不能为空',
         'mini_appid.max' => '小程序appid长度不能超过255',
         'mini_path.require' => '小程序路径不能为空',
         'mini_path.max' => '小程序路径长度不能超过255',
@@ -66,7 +66,7 @@ class ProjectCaseValidate extends Validate
      * @var array[]
      */
     protected $scene = [
-        'create' => ['case_category_id', 'logo', 'title', 'qrcode', 'official_account', 'mini_appid', 'mini_path', 'description', 'sort', 'enabled'],
-        'update' => ['id', 'case_category_id', 'logo', 'title', 'qrcode', 'official_account', 'mini_appid', 'mini_path', 'description', 'sort', 'enabled'],
+        'create' => ['case_category_id', 'logo', 'title', 'qrcode', 'official_account', 'mini_appid', 'description', 'sort', 'enabled'],
+        'update' => ['id', 'case_category_id', 'logo', 'title', 'qrcode', 'official_account', 'mini_appid', 'description', 'sort', 'enabled'],
     ];
 }

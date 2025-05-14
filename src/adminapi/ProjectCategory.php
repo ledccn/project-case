@@ -28,11 +28,13 @@ class ProjectCategory extends AuthController
      */
     public function index(Request $request): Response
     {
+        $order = $request->get('order', 'desc');
+
         $model = new EbProjectCaseCategory();
         $query = $model->db();
 
         return response_json()->success('ok', [
-            'list' => $query->select()->toArray(),
+            'list' => $query->order('sort', $order)->select()->toArray(),
             'count' => $query->count(),
         ]);
     }

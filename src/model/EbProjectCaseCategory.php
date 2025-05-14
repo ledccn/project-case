@@ -29,4 +29,10 @@ class EbProjectCaseCategory extends Model
      * @var string
      */
     protected $pk = 'id';
+
+    /**
+     * 可排序字段
+     * @var array
+     */
+    public const ORDER_FIELDS = ['id', 'sort'];
 }

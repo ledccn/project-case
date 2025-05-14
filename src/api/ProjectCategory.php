@@ -26,11 +26,17 @@ class ProjectCategory
      */
     public function index(Request $request): Response
     {
+        $field = $request->get('field', 'sort');
+        $order = $request->get('order', 'desc');
+        if (!in_array($field, EbProjectCaseCategory::ORDER_FIELDS)) {
+            return response_json()->fail('排序字段错误');
+        }
+
         $model = new EbProjectCaseCategory();
         $query = $model->db();
 
         return response_json()->success('ok', [
-            'list' => $query->select()->toArray(),
+            'list' => $query->order($field, $order)->select()->toArray(),
             'count' => $query->count(),
         ]);
     }
