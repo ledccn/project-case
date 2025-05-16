@@ -48,6 +48,6 @@ class ProjectCategoryValidate extends Validate
      */
     protected $scene = [
         'create' => ['title', 'sort', 'icon', 'description'],
-        'update' => ['id', 'title', 'sort', 'icon', 'description'],
+        'update' => ['title', 'sort', 'icon', 'description'],
     ];
 }

@@ -67,6 +67,6 @@ class ProjectCaseValidate extends Validate
      */
     protected $scene = [
         'create' => ['case_category_id', 'logo', 'title', 'qrcode', 'official_account', 'mini_appid', 'description', 'sort', 'enabled'],
-        'update' => ['id', 'case_category_id', 'logo', 'title', 'qrcode', 'official_account', 'mini_appid', 'description', 'sort', 'enabled'],
+        'update' => ['case_category_id', 'logo', 'title', 'qrcode', 'official_account', 'mini_appid', 'description', 'sort', 'enabled'],
     ];
 }
